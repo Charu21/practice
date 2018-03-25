@@ -70,14 +70,7 @@ public class phoneCheck {
 			int i=0;
 			while (rowIterator.hasNext()) 
 			{ 
-				Row row = rowIterator.next(); 
-	 
-				Cell cell = row.getCell(1); 
-				if (cell.getCellType()== Cell.CELL_TYPE_STRING) 
-				{
-					dataMap.put(i, cell.getStringCellValue());
-					i++;
-					} 
+				// putting in data map code will come here
 				} System.out.println(""); 
 			
 			for(Map.Entry<Integer,String> m: dataMap.entrySet())
@@ -142,19 +135,7 @@ public class phoneCheck {
 					int rowCount=1;
 					for (Map.Entry<Integer, String> m : result.entrySet()) 
 					{ 
-						Row row = mySheet.getRow(rowCount);
-						if(row==null)
-						{
-							row=mySheet.createRow(rowCount);
-						}
-						
-						
-						Cell cell =row.getCell(3);
-						if (cell==null)
-						{
-								row.createCell(3).setCellValue(m.getValue());
-							}
-						rowCount++;
+						// for every entry m , write at proper position to the excel file
 					}
 					myWorkBook.write(os); 
 					System.out.println("Writing on Excel file Finished ..."); 
